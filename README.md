@@ -11,6 +11,12 @@ Deploy the application:
 $ kubectl apply -f kubernetes/
 ```
 
+Para testar a requisição usando o gateway do istio, segue os passos abaixo:
+
+- Acesso a maquina: multipass shell nome da maquina
+- Pegue o ip do service ingress, do namespaces istio-ingressgateway
+- Faça o curl  http://10.152.183.136:80/kayaks
+
 Notice that the YAML files are just regular Kubernetes deployment YAML. This is because Istio 0.2+ can use Kubernetes initializer feature.
 During deployment time, Kubernetes will automatically & transparently inject additional sidecars and configurations to these YAML files.
 
